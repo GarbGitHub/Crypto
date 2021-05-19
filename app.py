@@ -7,8 +7,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=["GET"])
 def main():
-    # ip = request.headers.get('X-Real-IP')
-    ip = request.environ['REMOTE_ADDR']
+    ip = request.headers.get('X-Real-IP')
+    # ip = request.environ['REMOTE_ADDR']
     print(ip)
     menu = page_menu()
     title = 'Text cryptographer'
