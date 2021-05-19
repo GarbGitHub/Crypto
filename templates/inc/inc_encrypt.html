@@ -1,0 +1,45 @@
+{% if start %}
+    <form method="post">
+        <div class="mb-3">
+            <label for="FormControlTextarea" class="form-label">Text</label>
+            <textarea name="text" class="form-control" id="FormControlTextarea" rows="5" required></textarea>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" value="1" id="flexRadioDefault1"
+                   checked
+                   onclick="definingKeyType()">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Generate a new key
+            </label>
+        </div>
+        <div class="mb-3 form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" value="2" id="flexRadioDefault2"
+                   onclick="definingKeyType()">
+            <label class="form-check-label" for="flexRadioDefault2">
+                Use an existing key
+            </label>
+        </div>
+        <div class="mb-3">
+            <label for="FormControlTypeKey" class="form-label">Existing key</label>
+            <input type="text" name="UserKey" class="form-control" id="FormControlTypeKey" disabled="disabled"
+                   placeholder="example: czL34s8eqmyCeIV454e--Uti6u9pd51_VXMYJKuHxk8=" required value="">
+        </div>
+        <p class="text-center">
+            <button type="submit" class="btn btn-primary">Encrypt</button>
+        </p>
+    </form>
+{% endif %}
+{% if text %}
+    <div class="mb-3">
+        <label for="KeyInput" class="form-label">Key</label>
+        <input type="text" name="KeyInput" class="form-control" id="KeyInput" value="{{ key }}">
+    </div>
+    <div class="mb-3">
+        <label for="AnswerTextarea" class="form-label">Result</label>
+        <textarea class="form-control" id="AnswerTextarea" rows="5">{{ text }}</textarea>
+    </div>
+    <p class="text-center">
+        <a class="btn btn-primary" href="/encrypt/">Continue to encrypt</a>
+    </p>
+{% endif %}

@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: #616161 !important;
+}
+
+h1{
+    margin-bottom: 50px;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 100px;
+    text-align: center;
+    margin: auto 0;
+}
+
+.menu {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.menu a {
+    color: #5a8dd7;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu .active {
+    color: #0b63e7;
+    font-weight: 700;
+    /*border-bottom: 3px solid #0b63e7;*/
+}
+
+.menu a:hover {
+    color: #0b63e7;
+    font-weight: 700;
+    /*border-bottom: 3px solid #0b63e7;*/
+}
+
+.menu a:active {
+    color: #0b63e7;
+    font-weight: 700;
+    /*border-bottom: 3px solid #0b63e7;*/
+}
+
+.footer {
+    height: 80px;
+
+}
+
+/* Элементу .top занимать все доступное пространство */
+.top {
+    flex-grow: 1;
+}

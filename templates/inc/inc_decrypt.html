@@ -1,0 +1,14 @@
+<form method="post">
+    <div class="mb-3">
+        <label for="FormControlTypeKey" class="form-label">Existing key</label>
+        <input type="text" name="UserKey" class="form-control" id="FormControlTypeKey"
+               placeholder="example: czL34s8eqmyCeIV454e--Uti6u9pd51_VXMYJKuHxk8=" required value="{{ key }}">
+    </div>
+    <div class="mb-3">
+        <label for="FormControlTextarea" class="form-label">Text</label>
+        <textarea name="text" class="form-control" id="FormControlTextarea" rows="5" required>{{ text }}</textarea>
+    </div>
+    <p class="text-center">
+        <button type="submit" class="btn btn-primary">Decrypt</button>
+    </p>
+</form>
