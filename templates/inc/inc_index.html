@@ -1,7 +1,8 @@
+<h1 class="text-center">{{ words.site_name[language] }}</h1>
 <div class="text-center">
-    <p>IP: {{ ip }}</p>
+    <p>{{ words.site_description[language] }}</p>
     <div class="btn-group btn-group-lg" role="group" aria-label="Basic outlined example">
-        <a href="/encrypt/" class="btn btn-outline-primary">Encrypt</a>
-        <a href="/decrypt/" class="btn btn-outline-primary">Decrypt</a>
+        <a href="/encrypt/" class="btn btn-outline-primary">{{ words.encrypt[language] }}</a>
+        <a href="/decrypt/" class="btn btn-outline-primary">{{ words.decrypt[language] }}</a>
     </div>
 </div>
