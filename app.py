@@ -19,7 +19,8 @@ def main():
                            words=words,
                            title=words['site_name'][language],
                            description=words['site_description'][language],
-                           language=language)
+                           language=language,
+                           session=session)
 
 
 @app.route('/encrypt/', methods=["POST", "GET"])
