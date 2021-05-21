@@ -5,7 +5,7 @@ from menu import page_menu
 from function import session_creation, check_session, session_del
 from dict_words import words
 app = Flask(__name__)
-app.config.from_object('config_local')
+app.config.from_object('config')
 
 
 @app.route('/', methods=["GET"])
