@@ -3,7 +3,7 @@ import requests
 import bs4 as bs4
 from fake_useragent import UserAgent
 from ipstack import GeoLookup
-from config_local import KEY_STACK
+from config import KEY_STACK
 
 
 def country_definition(ip: str) -> str:
