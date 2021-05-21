@@ -1,12 +1,29 @@
+
+html.light {
+    --color-bg: #fff;
+    --color-bg-disabled: #e9ecef;
+    --color-bg-input: #fff;
+    --color-text: #616161;
+}
+
+html.dark {
+    --color-bg: #000;
+    --color-bg-disabled: #1b1b1b;
+    --color-bg-input: #ccc;
+    --color-text: #a7a7a7;
+}
+
 * {
     margin: 0;
     padding: 0;
 }
+
 body {
-    color: #616161 !important;
+    color: var(--color-text) !important;
+    background-color: var(--color-bg) !important;
 }
 
-h1{
+h1 {
     margin-bottom: 50px;
 }
 
@@ -22,9 +39,13 @@ h1{
     margin: auto 0;
 }
 
+.themes {
+    margin-top: 10px;
+}
+
 .menu {
     list-style-type: none;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .menu li {
@@ -58,6 +79,21 @@ h1{
     font-weight: 700;
     /*border-bottom: 3px solid #0b63e7;*/
 }
+
+textarea.form-control,
+input.form-control,
+textarea.form-control:focus,
+input.form-control:focus,
+textarea.form-control:active,
+input.form-control:active
+{
+    background-color: var(--color-bg-input);
+}
+.form-control:disabled, .form-control[readonly] {
+    background-color: var(--color-bg-disabled) !important;
+    opacity: 1;
+}
+
 
 .footer {
     height: 80px;
