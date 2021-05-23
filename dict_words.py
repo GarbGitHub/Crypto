@@ -77,7 +77,7 @@ words = {
     'text': {
         'English': 'Text',
         'Russian': 'Текст',
-        'Spanish': 'texto'
+        'Spanish': 'Texto'
     },
     'generate_new_key': {
         'English': 'Generate a new key',
