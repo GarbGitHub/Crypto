@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, jsonify
 
 from cryptography.fernet import Fernet
 from menu import page_menu
@@ -118,6 +118,14 @@ def decrypt():
 @app.route('/del/', methods=["GET"])
 def dell():
     return session_del()
+
+
+@app.route("/get_my_ip", methods=["GET"])
+def get_my_ip():
+    # result = jsonify({'ip': request.remote_addr})
+    result = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+    print(result)
+    return result, 200
 
 
 if __name__ == '__main__':  # Запуск сервера на локальном устройстве
