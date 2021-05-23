@@ -1,7 +1,7 @@
 from flask import session, request
 
 from ipstack import GeoLookup
-from config_local import KEY_STACK
+from config import KEY_STACK
 
 
 def country_definition(ip: str) -> str:
@@ -30,7 +30,12 @@ def session_creation():
     session.permanent = True
     session['ip'] = user_ip()
     session['country'] = country_definition(session['ip'])
-    session['language'] = 'Russian' if session['country'] == 'RU' else 'English'
+    if session['country'] == 'RU':
+        session['language'] = 'Russian'
+    elif session['country'] == 'ES':
+        session['language'] = 'Spanish'
+    else:
+        session['language'] = 'English'
 
 
 def session_del():

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, jsonify
+from flask import Flask, render_template, request, session
 
 from cryptography.fernet import Fernet
 from menu import page_menu
@@ -120,13 +120,18 @@ def dell():
     return session_del()
 
 
-@app.route("/get_my_ip", methods=["GET"])
+@app.route("/ip/", methods=["GET"])
 def get_my_ip():
-    # result = jsonify({'ip': request.remote_addr})
-    result = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
-    print(result)
-    return result, 200
+    language = session['language']
+    menu = page_menu(language)
+    return render_template('base.html',
+                           menu=menu,
+                           words=words,
+                           title=words['site_name'][language],
+                           description=words['site_description'][language],
+                           language=language,
+                           session=session)
 
 
-if __name__ == '__main__':  # Запуск сервера на локальном устройстве
-    app.run(debug=True)  # отображение ошибок
+if __name__ == '__main__':
+    app.run()
